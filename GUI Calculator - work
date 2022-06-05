@@ -1,0 +1,201 @@
+package calculator;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Calculator extends JFrame{
+	
+	private JTextField tf1;
+	private JTextField tf2;
+	private String tempString = "";
+	private String op;
+	private int tempNum1 = 0;
+	private int tempNum2 = 0;
+	private int result;
+	
+	public Calculator() {
+		setTitle("CACLUATOR");
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container c = getContentPane();
+		c.setLayout(new BorderLayout());
+		
+		JPanel Panel_North = new JPanel();
+		JPanel Panel_Center = new JPanel();
+		JPanel Panel_South = new JPanel();
+		
+		JLabel text1 = new JLabel(" ");
+		tf1 = new JTextField(15);
+		JLabel text2 = new JLabel("결과");
+		tf2 = new JTextField(16);
+		
+		Panel_North.setBackground(Color.WHITE);
+		Panel_North.setLayout(new GridLayout(4, 4));
+		Panel_Center.setBackground(Color.WHITE);
+		Panel_Center.setLayout(new GridLayout(4, 4, 5, 5));
+		Panel_North.setBackground(Color.GRAY);
+		
+		Panel_North.add(text1);
+		Panel_North.add(tf1);
+		Panel_North.add(text2);
+		Panel_North.add(tf2);
+		
+		for(int i=0; i<16; i++) {
+			JButton b = new JButton();
+			b.addActionListener(new MyAction());
+			String[] str = {"CE", "=", "+", "-", "*", "/"};
+			Panel_Center.add(b);
+			if(i<10)
+				b.setText(Integer.toString(i));
+			else
+				b.setText(str[i-10]);
+			if(i>11) {
+				b.setOpaque(true);
+				b.setBackground(Color.WHITE);
+			}
+		}
+		
+		c.add(Panel_North, BorderLayout.NORTH);
+		c.add(Panel_Center, BorderLayout.CENTER);
+		c.add(Panel_North, BorderLayout.SOUTH);
+		
+		this.setSize(300, 400);
+		this.setVisible(true);
+	}
+	
+	class MyAction implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			JButton b = (JButton)e.getSource();
+			tempString = tf1.getText();
+			
+			if (tempString.equals("0")) {
+				tempString = "";
+			}
+			
+			switch(b.getText()) {
+			case "0":
+				int temp = 0;
+				if (tempString != "")
+					tf1.setText(tempString + "0");
+				break;
+			case "1":
+				temp = 1;
+				if(tempString != "") {
+					tf1.setText(tempString + "1");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "2":
+				temp = 2;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "2");
+				} else {
+					tf1.setText(Integer.toString(temp));				
+				}
+				break;
+			case "3":
+				temp = 3;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "3");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "4":
+				temp = 4;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "4");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "5":
+				temp = 5;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "5");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "6":
+				temp = 6;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "6");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "7":
+				temp = 7;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "7");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "8":
+				temp = 8;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "8");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "9":
+				temp = 9;
+				if(tf1.getText() != "") {
+					tf1.setText(tempString + "9");
+				} else {
+					tf1.setText(Integer.toString(temp));					
+				}
+				break;
+			case "CE":
+				tf1.setText("");
+				tf2.setText("");
+				break;
+			case "+":
+				tempNum1 = Integer.parseInt(tempString);
+				op = "+";
+				tf1.setText("");
+				break;
+			case "-":
+				tempNum1 = Integer.parseInt(tempString);
+				op = "-";
+				tf1.setText("");
+				break;
+			case "*":
+				tempNum1 = Integer.parseInt(tempString);
+				op = "*";
+				tf1.setText("");
+				break;
+			case "/":
+				tempNum1 = Integer.parseInt(tempString);
+				op = "/";
+				tf1.setText("");
+				break;
+			case "=":
+				tempNum2 = Integer.parseInt(tempString);
+				if(op == "+")
+					result = tempNum1 + tempNum2;
+				if(op == "-")
+					result = tempNum1 - tempNum2;
+				if(op == "*")
+					result = tempNum1 * tempNum2;
+				if(op == "/")
+					result = tempNum1 / tempNum2;
+				tf2.setText(Integer.toString(result));
+			}
+			
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		new Calculator();
+	}
+	
+}
