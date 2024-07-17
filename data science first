@@ -1,0 +1,43 @@
+y = 2000
+
+if (y%4==0) or (y%400==0):
+  if(y%100==0):
+    print("평년입니다.")
+  else:
+    print("윤년입니다.")  #????? : 1600년이 400년으로 나누어 떨어지는 해라서 윤년으로 나와야하는데 100으로도 떨어져서 평년으로 나와
+else:
+  print("윤년이 아닙니다.")
+
+
+
+
+
+
+
+#연습문제1
+XA = input("자백을 했습니까?:")
+XB = input("자백을 했습니까?:")
+
+YA = 0
+YB = 0
+
+if XA == "네":
+  XA = True
+  if XB == "네":
+    XB = True
+else:
+  XA = False
+  XB = False
+
+if XA == True:
+  YA = 0
+  YB = 10
+  print("죄수 A는 {}년형이고 나머지 한 명이 {}년을 복역해야 한다.".format(YA, YB))
+elif XB == True:
+  YA = 5
+  YB = 5
+  print("죄수 B는 {}년형이고 나머지 한 명도 {}년을 복역해야 한다.".format(YB, YA))
+else:
+  YA = 1
+  YB = 1
+  print("죄수 A는 {}년형이고 나머지 한 명도 {}년을 복역해야 한다.".format(YA, YB))
