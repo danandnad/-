@@ -41,3 +41,55 @@ else:
   YA = 1
   YB = 1
   print("죄수 A는 {}년형이고 나머지 한 명도 {}년을 복역해야 한다.".format(YA, YB))
+
+
+
+
+
+
+
+
+
+
+
+
+def twotimes(x):
+  y = 2 * x
+  return y
+
+twotimes(10)
+
+
+
+
+
+
+def evenodd(x):
+  y = x % 2
+  if y != 0 :
+    return "홀수"
+  y == 0
+  return "짝수" 
+
+evenodd(4)
+
+
+
+
+
+
+def moon(x):
+  if (x%4==0) & (x%400==0):
+    return "윤년입니다."
+  else:
+    return "평년입니다."
+
+moon()
+
+
+
+
+
+
+
+
