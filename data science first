@@ -223,3 +223,188 @@ def diffsum2(a, b, c):
     m = diffsum
 diffsum2(2, 2, 3)  
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for i in range(1,10):
+    if i <= 5:
+        for j in range(5-i):
+            print(" ",end="")
+        for j in range(2*i-1):
+            print("*",end="")
+        print()
+    else:
+        for j in range(i-5):
+            print(" ",end="")
+        for j in range((10-i)*2-1):
+            print("*",end="")
+        print()
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for i in range(4):
+    for j in range(4):
+        print(i + j, end=" ")
+    print()  #??????????????????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+for i in range(6):
+    n1 = i + 1
+    for j in range(6):
+        n2 = j + 1
+        print(n1, n2)
+
+
+
+
+
+
+
+
+
+
+#딕셔너리변수 = {자료이름1: 자료값1, 자료이름2: 자료값2, 자료이름3: 자료값3}
+
+
+
+
+
+
+h = [1, 2, 3]
+h1, h2, h3 = h
+#이렇게 쉼표를 사용하여 복수 할당을 사용한다.
+#단 복수 할당을 할 때는 값이 들어갈 변수의 개수와 리스트의 길이가 같아야 한다. 
+#그렇지 않으면 오류가 발생한다.
+print(h1)
+print(h2)
+print(h3)
+
+
+
+
+
+
+
+
+
+s = []
+a1 = [90, 85, 95, 80, 90, 100, 85, 75, 85, 80]
+a2 = [95, 90, 90, 90, 95, 100, 90, 80, 95, 90]
+for i in range(len(a1)):
+    s.append(a1[i] + a2[i])
+s
+
+>>[185, 175, 185, 170, 185, 200, 175, 155, 180, 170]
+
+
+
+
+#enumerate함수와 zip함수를 사용한 것. 
+#enumerate 함수와 zip함수 차이 알아보기!!!!!!!!!!!!!!!!!!
+#https://kevinitcoding.tistory.com/entry/%ED%8C%8C%EC%9D%B4%EC%8D%ACPython-enumerate%EC%99%80-zip%EC%97%90-%EB%8C%80%ED%95%9C-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%A6%AC
+s = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+a1 = [90, 85, 95, 80, 90, 100, 85, 75, 85, 80]
+a2 = [95, 90, 90, 90, 95, 100, 90, 80, 95, 90]
+for i, (a1i, a2i) in enumerate(zip(a1, a2)):
+    s[i] = a1i + a2i
+s
+
+
+
+
+
+
+
+
+
+
+
+
+X = [[85,  90,  20,  50,  60,  25,  30,  75,  40,  55],
+     [70, 100,  70,  70,  55,  75,  55,  60,  40,  45],
+     [25,  65,  15,  25,  20,   5,  60,  70,  35,  10],
+     [80,  45,  80,  40,  75,  35,  80,  55,  70,  90],
+     [35,  50,  75,  25,  35,  70,  65,  50,  70,  10]]
+
+
+
+
+sum = 0
+num = 0
+for i in range(len(X)):
+    for j in range(len(X[i])):
+        num += 1
+        sum += X[i][j]
+sum / num
+#sum / len(x)랑 왜 값이 다르지 ??????? 한번더 봐봐
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#2.10chapter need to take a problems. 2.9도
