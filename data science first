@@ -104,4 +104,122 @@ days1(11) #11월의 날짜 수
 >>30
 
 
+#내가 한거
+m = input("지금이 몇 월입니까? :")
+n = 0
+
+def moon(m):
+  if (m == 1,3,5,7,8,10,12):
+     n = 31
+     return n 
+  elif (m == 4,6,9,11):
+     n = 30
+     return n
+  else:
+    n = 28
+    return n
+  
+print(n)  
+
+
+
+
+
+
+#다른 사람이 한거
+
+
+def days1(y, m):
+  if y%4 != 0:
+    if m == 1 or m ==3 or m == 5 or m == 7 or m ==8 or m ==10 or m ==12:
+      return "평년이며 31일"
+    elif m == 4 or m ==6 or m ==9 or m ==11:
+      return "평년이며 30일"
+    elif m == 2:
+      return "평년이며 28일"
+    else:
+      return "윤년은 다른 일수를 가집니다."
+      
+days1(2004, 11)     
+
+
+
+
+
+
+
+
+
+
+
+
+#<람다함수>
+def f(x):
+  return 2 * x
+#서로 다른 방법이지만 람다함수를 사용하면 조금 더 편리하게 사용가능하다.
+
+f = lambda x : 2 * x #람다함수 사용으로 변수이름을 먼저 지정해준 다음 출력변수에 대한 값을 계산한다.
+f(2)
+
+
+
+
+
+
+
+
+def num(a, b, c):
+  x = a + b + c
+  y = a^2 + b^2 + c^2
+  if x >= y:
+    diffsum = x - y
+  elif x <= y:
+    diffsum = y - x
+  return diffsum
+   
+num(3, 4, 5)
+
+
+
+
+
+
+
+
+
+z = 3
+
+def f4(x):
+    global z #global 키워드는 선언함으로써 지역밖에서 선언되었던 변수의 기존값을 없애고 지역변수에서 지정해줬던 변수로 전역변수를 적용해주는 키워드입니다.
+    z = 99
+    y = z * x
+    print("y =", y)
+    print("z =", z)
+    return y
+
+
+
+
+
+
+
+
+
+###
+함수 바깥에 m 이라는 전역 변수를 만들고 그 값을 0으로 놓는다.
+앞에서 만든 diffsum 함수를 고쳐서 diffsum 함수와 같은 값을 반환하지만 함수를 실행할 때 마다 
+diffsum 함수에서 계산된 값이 원래 있던 m보다 크면 m을 계산된 값으로 바꾸는 함수 diffsum2 를 만든다.
+###
+def diffsum2(a, b, c):
+  x = a + b + c
+  y = a^2 + b^2 + c^2
+  global m
+  if x >= y:
+    diffsum = x - y
+  elif x <= y:
+    diffsum = y - x
+  return diffsum
+  if diffsum > m :
+    m = diffsum
+diffsum2(2, 2, 3)  
 
