@@ -480,6 +480,148 @@ for k, v in x.items(): #딕셔너리 자료의 키와 값을 쌍으로 하여 �
 
 
 
+
+
+
+
+
+class Rectangle(object):
+
+  def __init__(self, h, v):
+    # __init__란 함수는 생성자(constructor)라고 한다.
+    self.h = h
+    self.v = v
+
+  def area(self):
+    return self.h * self.v
+
+r = Rectangle(10, 20) 
+#객체를 생성할 때는 클래스이름을 함수처럼 호출해야 하는데, 이때 실제로는 __init__로 정의된 생성자 함수가 호출된다. 
+#생성자 함수 내부에서는 생성자를 호출할 때 넣은 입력 변수, 즉 인자의 값을 속성값으로 저장한다.
+a = r.area()
+
+print(a)
+
+
+
+
+
+
+
+
+class Square(object):
+  
+  def __init__(self, b, h):
+    self.b = b
+    self.h = h
+
+  def area(self):
+    return self.b * self.h / 2
+
+s = Square(10, 4)
+a = s.area()
+
+print(a)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class cube(object):
+
+  def __init__(this, a, d, h):
+    this.a = a
+    this.d = d
+    this.h = h
+
+  def volume(this):
+    return (this.a * this.h * this.d)
+  
+  def surface(this):
+    return (this.a * this.d) * 6
+  
+c = cube(5, 5, 5)
+v = c.volume()
+s = c.surface()
+
+print(v)
+print(s)
+
+
+
+
+
+
+
+
+
+
+
+class Character(object):
+
+  def __init__(self):
+    self.life = 1000
+  def attacked(self):
+    self.life -= 10
+    print("공격받음! 생명력 =", self.life)
+
+
+a = Character()
+b = Character()
+c = Character()
+
+a.life, b.life, c.life
+#(1000, 1000, 1000)
+a.attacked()
+#(990, 1000, 1000)
+
+
+
+
+
+
+
+
+
+
+class 자식클래스이름(부모클래스이름):
+
+    def __init__(self, 속성값1, 속성값2):
+        super(자식클래스이름, self).__init__()
+        자식 클래스의 초기화 코드
+
+#사실 우리가 지금까지 쓰던 클래스 정의를 살펴보면 object라는 부모 클래스에서 상속받는 것이었다.!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+#이 코드에서 super(자식클래스이름, self).__init()__ 부분은 부모 클래스의 초기화 생성자를 호출하는 부분이다. 
+#예를 들어 Warrior 라는 클래스에서 부모 클래스인 Character 클래스의 생성자를 호출하면 life라는 속성값을 초기화하므로 
+#자식 클래스에서는 이 속성값을 초기화해줄 필요가 없다.
+
+
+
+
+
+
+
+
+
+
 https://notebook.community/zzsza/Datascience_School/03.%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/06.%20%ED%8C%8C%EC%9D%B4%EC%8D%AC%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%20%EA%B8%B0%EC%B4%88%202
 https://hangjastar.tistory.com/264
 https://wikidocs.net/book/5011
